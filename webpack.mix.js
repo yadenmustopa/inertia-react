@@ -7,3 +7,11 @@ mix.js('resources/js/app.js', 'public/js')
     ]);
 
     mix.browserSync('http://localhost:8000');
+
+mix.
+    webpackConfig
+    ({
+        stats: {
+            children: true,
+        }
+    });
