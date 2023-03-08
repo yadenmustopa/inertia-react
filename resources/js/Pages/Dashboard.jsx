@@ -7,7 +7,10 @@ export default function Dashboard() {
     // },[]);
   return (
         <App title="Dashboard">
-            Dashboard
+          <div className="card">
+              <div className="card-header"> Dashboard</div>
+              <div className="card-body">Page Dashboard</div>
+          </div>
         </App>
   )
 }
