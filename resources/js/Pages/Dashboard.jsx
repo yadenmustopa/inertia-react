@@ -5,12 +5,14 @@ export default function Dashboard() {
     // useEffect(()=>{
     //     document.title = "Dashboard";
     // },[]);
-  return (
-        <App title="Dashboard">
-          <div className="card">
-              <div className="card-header"> Dashboard</div>
-              <div className="card-body">Page Dashboard</div>
-          </div>
-        </App>
-  )
+    return (
+        <>
+            <div className="card">
+                <div className="card-header"> Dashboard</div>
+                <div className="card-body">Page Dashboard</div>
+            </div>
+        </>
+    )
 }
+
+Dashboard.layout = (page) => <App children={page} title="Dashboard" />

@@ -8,7 +8,10 @@ export default function app({ children,title}) {
     <div>
         <Head title = {title} />
         <Navbar/>
-        {children}
+          <div className="pt-4"></div>
+          <div className="container">
+              {children}
+          </div>
     </div>
   )
 }
