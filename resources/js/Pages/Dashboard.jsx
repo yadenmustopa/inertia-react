@@ -9,7 +9,7 @@ export default function Dashboard() {
         <>
             <div className="card">
                 <div className="card-header"> Dashboard</div>
-                <div className="card-body">Page Dashboard</div>
+                <div className="card-body">Page Dashboard yo ah</div>
             </div>
         </>
     )

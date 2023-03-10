@@ -1,7 +1,9 @@
-import { Link } from '@inertiajs/inertia-react'
+import { Link, usePage } from '@inertiajs/inertia-react'
 import React from 'react'
 
-export default function Navbar() {
+export default function Navbar(props) {
+    const { auth } = usePage().props;
+
   return (
     <div>
           <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -20,18 +22,23 @@ export default function Navbar() {
                           </li>
 
                       </ul>
-                      <ul className="navbar-nav  mb-2 mb-lg-0">
-                          <li className="nav-item dropdown">
-                              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Dropdown
-                              </a>
-                              <ul className="dropdown-menu">
-                                  <li><a className="dropdown-item" href="#">Action</a></li>
-                                  <li><a className="dropdown-item" href="#">Another action</a></li>
-                                  <li><hr className="dropdown-divider" /></li>
-                                  <li><a className="dropdown-item" href="#">Something else here</a></li>
-                              </ul>
-                          </li>
+                      {auth.user ?
+                          <ul className="navbar-nav  mb-2 mb-lg-0">
+                              <li className="nav-item dropdown">
+                                  <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      {auth.user?.name}
+                                  </a>
+                                  <ul className="dropdown-menu">
+                                      <li><a className="dropdown-item" href="#">Action</a></li>
+                                      <li><a className="dropdown-item" href="#">Another action</a></li>
+                                      <li><hr className="dropdown-divider" /></li>
+                                      <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                  </ul>
+                              </li>
+                          </ul>
+
+                          :
+                          <ul className="navbar-nav  mb-2 mb-lg-0">
                           <li className="nav-item">
                               <a className="nav-link" aria-current="page" href="/login">Login</a>
                           </li>
@@ -39,6 +46,7 @@ export default function Navbar() {
                               <a className="nav-link" href="/register">Register</a>
                           </li>
                       </ul>
+                      }
                   </div>
               </div>
           </nav>
